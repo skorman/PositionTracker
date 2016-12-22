@@ -18,7 +18,7 @@ public class Draw {
 	
 	public Draw(){
 
-		paper = new SketchPad(1000, 1000);
+		paper = new SketchPad(100000, 100000);
 		pen = new DrawingTool(paper);
 		in = new Scanner(System.in);
 		xPos = 0;
@@ -26,50 +26,6 @@ public class Draw {
 	}
 	
 	public void draw(){
-		/*
-		double distance = 0;
-		double angle = 10;  
-		pen.move(0, 0);
-		pen.setDirection(90);
-		pen.setDirection(-(angle + 270));
-		pen.forward(0);
-		distance += 0;
-		position.setPosistions(angle, distance);
-		*/
-		//System.out.println(position.getLeftXPos() == pen.getXPos() && position.getLeftYPos() == pen.getYPos());
-		//System.out.println("Pos " + position.getLeftXPos() + " " + position.getLeftYPos());
-		//System.out.println("Expected " + pen.getXPos() + " " + pen.getYPos());
-		
-		/*
-		for(int i = -90; i <= 90; i += 20){
-			angle = i;
-			distance = 0;
-			
-			pen.move(200, -30);;
-			pen.setDirection(-(angle + 270));
-			pen.forward(360);
-			distance += 360;
-			position.setPosistions(angle, 360);
-			
-			System.out.println("Pos " + position.getLeftXPos() + " " + position.getLeftYPos());
-			System.out.println("Expected " + pen.getXPos() + " " + pen.getYPos());
-			System.out.println();
-		}
-		for(int i = -90; i <= 90; i += 20){
-			angle = i;
-			distance = 0;
-			
-			pen.move(200, -30);;
-			pen.setDirection(-(angle + 270));
-			pen.forward(-360);
-			distance += -360;
-			position.setPosistions(angle, -360);
-			
-			System.out.println("Pos " + position.getLeftXPos() + " " + position.getLeftYPos());
-			System.out.println("Expected " + pen.getXPos() + " " + pen.getYPos());
-			System.out.println();
-		}
-		*/
 		while(true){
 			doSomething();
 		}
@@ -88,8 +44,8 @@ public class Draw {
 		pen.setDirection(-(find.getAngle() + 270));
 		pen.forward(find.getDistance());
 		
-		System.out.println("Expected " + pen.getXPos() + ", " + Math.round(pen.getYPos()));
-		System.out.println("Position " + position.getLeftXPos() + ", " + position.getLeftYPos());
+		System.out.println("Expected " + pen.getXPos() + ", " + pen.getYPos());
+		System.out.println("Position " + position.getRightXPos() + ", " + position.getRightYPos());
 	}
 	
 	
@@ -148,5 +104,51 @@ public class Draw {
 	PositionTracker.setPosistions(-104, distance);
 	
 	System.out.println(PositionTracker.getLeftXPos() == pen.getXPos() && PositionTracker.getLeftYPos() == pen.getYPos());
+	*/
+	
+
+	/*
+	double distance = 0;
+	double angle = 10;  
+	pen.move(0, 0);
+	pen.setDirection(90);
+	pen.setDirection(-(angle + 270));
+	pen.forward(0);
+	distance += 0;
+	position.setPosistions(angle, distance);
+	*/
+	//System.out.println(position.getLeftXPos() == pen.getXPos() && position.getLeftYPos() == pen.getYPos());
+	//System.out.println("Pos " + position.getLeftXPos() + " " + position.getLeftYPos());
+	//System.out.println("Expected " + pen.getXPos() + " " + pen.getYPos());
+	
+	/*
+	for(int i = -90; i <= 90; i += 20){
+		angle = i;
+		distance = 0;
+		
+		pen.move(200, -30);;
+		pen.setDirection(-(angle + 270));
+		pen.forward(360);
+		distance += 360;
+		position.setPosistions(angle, 360);
+		
+		System.out.println("Pos " + position.getLeftXPos() + " " + position.getLeftYPos());
+		System.out.println("Expected " + pen.getXPos() + " " + pen.getYPos());
+		System.out.println();
+	}
+	for(int i = -90; i <= 90; i += 20){
+		angle = i;
+		distance = 0;
+		
+		pen.move(200, -30);;
+		pen.setDirection(-(angle + 270));
+		pen.forward(-360);
+		distance += -360;
+		position.setPosistions(angle, -360);
+		
+		System.out.println("Pos " + position.getLeftXPos() + " " + position.getLeftYPos());
+		System.out.println("Expected " + pen.getXPos() + " " + pen.getYPos());
+		System.out.println();
+	}
 	*/
 }

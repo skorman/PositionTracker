@@ -7,8 +7,8 @@ public class GoToPosition {
 	private PositionTracker position = Draw.position;
 	
 	public void findValues(double xPos, double yPos){
-		double currentXPos = position.getLeftXPos();
-		double currentYPos = position.getLeftYPos();
+		double currentXPos = position.getRightXPos();
+		double currentYPos = position.getRightYPos();
 		System.out.println("Pos Tracker " + currentXPos + ", " + currentYPos);
 		
 		double xDistance = xPos - currentXPos;

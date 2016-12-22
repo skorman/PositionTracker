@@ -21,9 +21,16 @@ public class PositionTracker {
 		System.out.println("LeftDistance " + leftDistance);
 		System.out.println("xPos, yPos " + xLeftPos + ", " + yLeftPos);
 		lastLeftDistance = distance;
+		
+		double rightDistance = distance - lastRightDistance;
+		lastRightDistance = distance;
+		
+		/*
 		if(distance < 0 && angle > 0){
 			xLeftPos += Math.sin(Math.toRadians(angle)) * leftDistance;
 			yLeftPos += Math.cos(Math.toRadians(angle)) * leftDistance;
+			xRightPos += Math.sin(Math.toRadians(angle)) * rightDistance;
+			yRightPos += Math.cos(Math.toRadians(angle)) * rightDistance;
 			System.out.println("Neg Distance, Pos Angle");
 		}
 		else if(distance < 0 && angle < 0){
@@ -41,17 +48,14 @@ public class PositionTracker {
 			yLeftPos += Math.cos(Math.toRadians(angle)) * leftDistance;
 			System.out.println("Pos Distance, Pos Angle");
 		}
+		*/
 		
+		xLeftPos += Math.sin(Math.toRadians(angle)) * leftDistance;
+		yLeftPos += Math.cos(Math.toRadians(angle)) * leftDistance;
 		System.out.println("xPos, yPos after calc " + xLeftPos + ", " + yLeftPos);
-
 		
-		double rightDistance = distance - lastRightDistance;
-		lastRightDistance = distance;
-		
-		
-		
-		xRightPos = Math.cos(angle) * rightDistance;
-		yRightPos = Math.sin(angle) * rightDistance;
+		xRightPos += Math.sin(Math.toRadians(angle)) * rightDistance;
+		yRightPos += Math.cos(Math.toRadians(angle)) * rightDistance;
 	}
 	
 	public double getLeftXPos(){
